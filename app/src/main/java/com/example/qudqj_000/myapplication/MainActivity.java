@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText e1, e2, e3;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 setImage(average);
                 break;
             case R.id.reset:
+                reset();
                 break;
 
         }
@@ -48,26 +50,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void calculate(){
-
-        if(e1.getContext().toString().equals(null)||
-                e2.getContext().toString().equals(null)||
-                e3.getContext().toString().equals(null)){
-            kor = 0;
-            math = 0;
-            eng = 0;
+        if(e1.getText().toString().equals(null)||
+                e2.getText().toString().equals(null)||
+                e3.getText().toString().equals(null)||
+                e1.getText().toString().equals("")||
+                e2.getText().toString().equals("")||
+                e3.getText().toString().equals("")){
+            total = 0;
+            average = 0;
         }
         else{
-            String korg = e1.getContext().toString();
-            String mathg = e1.getContext().toString();
-            String engg = e1.getContext().toString();
+            String korg = e1.getText().toString();
+            String mathg = e2.getText().toString();
+            String engg = e3.getText().toString();
 
             kor = Integer.parseInt(korg);
             math = Integer.parseInt(mathg);
             eng = Integer.parseInt(engg);
-        }
 
-        total = kor + math + eng;
-        average = (kor + math + eng)/3;
+            total = kor + math + eng;
+            average = (kor + math + eng)/3;
+        }
 
         t1.setText(total + "점");
         t2.setText(average + "점");
@@ -90,5 +93,15 @@ public class MainActivity extends AppCompatActivity {
             i1.setImageResource(R.drawable.letter_f_red);
         }
 
+    }
+    void reset(){
+        e1.setText("");
+        e2.setText("");
+        e3.setText("");
+        t1.setText("0점");
+        t2.setText("0점");
+        i1.setImageResource(0);
+
+        Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show();
     }
 }
