@@ -3,12 +3,96 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="학점을 계산해보세요"
         />
+    <TableLayout
+        android:stretchColumns="*"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#adbff4">
+        <TableRow>
+            <TextView
+                android:text="국어"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/kor"
+                android:hint="점수 입력"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="수학"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/math"
+                android:hint="점수 입력"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="영어"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/eng"
+                android:hint="점수 입력"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/gradeCalc"
+                android:text="학점 계산"
+                android:layout_span="2"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/reset"
+                android:text="초기화"
+                android:layout_span="2"
+                />
+        </TableRow>
 
+        <TableRow>
+            <TextView
+                android:text="총점"/>
+            <TextView
+                android:id="@+id/totalscore"
+                android:text="0점"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="평균"/>
+            <TextView
+                android:id="@+id/average"
+                android:text="0점"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="학점"/>
+            <ImageView
+                android:id="@+id/grade"
+                android:src=""
+                />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
