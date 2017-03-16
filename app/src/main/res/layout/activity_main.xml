@@ -58,6 +58,7 @@
         </TableRow>
         <TableRow>
             <Button
+                android:onClick="onClickButton"
                 android:id="@+id/gradeCalc"
                 android:text="학점 계산"
                 android:layout_span="2"
@@ -65,6 +66,7 @@
         </TableRow>
         <TableRow>
             <Button
+                android:onClick="onClickButton"
                 android:id="@+id/reset"
                 android:text="초기화"
                 android:layout_span="2"
@@ -91,7 +93,7 @@
                 android:text="학점"/>
             <ImageView
                 android:id="@+id/grade"
-                android:src=""
+
                 />
         </TableRow>
     </TableLayout>
