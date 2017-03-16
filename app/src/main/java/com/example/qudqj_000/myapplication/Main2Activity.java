@@ -12,6 +12,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        setTitle("실습 선택");
     }
 
     public void ChooseProblem(View v){
@@ -21,7 +22,8 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.second:
-
+                intent = new Intent(Main2Activity.this, Main3Activity.class);
+                startActivity(intent);
                 break;
         }
     }
