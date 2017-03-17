@@ -12,14 +12,18 @@
         android:layout_height="wrap_content"
         android:text="레스토랑을 시작하려면 아래를 클릭하세요"/>
     <Switch
+        android:id="@+id/start"
         android:text="시작함"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <FrameLayout
+        android:id="@+id/whole_page"
+        android:visibility="invisible"
         android:background="#a1cbf4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/first_page"
             android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,8 +36,9 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/second_page"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp">
@@ -46,10 +51,11 @@
 
         </LinearLayout>
         <GridLayout
+            android:id="@+id/third_page"
+            android:visibility="invisible"
             android:rowCount="3"
             android:columnCount="2"
             android:orientation="vertical"
-            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp">
@@ -81,9 +87,71 @@
                 android:hint="명수를 입력하세요"
                 />
         </GridLayout>
+        <TableLayout
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="#c8ffffff"
+            android:id="@+id/forth_page"
+            android:visibility="invisible"
+            android:stretchColumns="*"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_span="2"
+                    android:textColor="#130552"
+                    android:textSize="20dp"
+                    android:text="예약 결과는 다음과 같습니다."/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="날짜:"/>
+                <TextView
+                    android:id="@+id/dates"
+                    android:text="몇년 몇월 몇일"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="시간:"/>
+                <TextView
+                    android:id="@+id/time"
+                    android:text="몇시 몇분"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="성인:"/>
+                <TextView
+                    android:id="@+id/adultR"
+                    android:text="몇명"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="청소년:"/>
+                <TextView
+                    android:id="@+id/teenagerR"
+                    android:text="몇명"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="어린이:"/>
+                <TextView
+                    android:id="@+id/childrenR"
+                    android:text="몇명"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textColor="#9d1414"
+                    android:textSize="15dp"
+                    android:layout_span="2"
+                    android:text="예약되었습니다."/>
 
+            </TableRow>
+        </TableLayout>
     </FrameLayout>
     <GridLayout
+        android:visibility="invisible"
+        android:id="@+id/buttonPanel"
         android:rowCount="1"
         android:columnCount="2"
         android:layout_width="match_parent"
