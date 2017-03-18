@@ -83,12 +83,35 @@ public class Main3Activity extends AppCompatActivity {
         }
     }
 
+    void setForthPage(){
+        int month = dp1.getMonth();
+        int day = dp1.getDayOfMonth();
+        int year = dp1.getYear();
+        int hour = tp1.getHour();
+        int minutes = tp1.getMinute();
+
+        t1.setText(year + "년 " + month + "월 " + day+"일");
+        t2.setText(hour + "시 " + minutes + "분");
+
+        String adult = e1.getText().toString();
+        String teenager = e2.getText().toString();
+        String children = e3.getText().toString();
+        int adn = Integer.parseInt(adult);
+        int tgn = Integer.parseInt(teenager);
+        int cdn = Integer.parseInt(children);
+
+        t3.setText(adn + "명");
+        t4.setText(tgn + "명");
+        t5.setText(cdn + "명");
+    }
+
     void pageChange(int index){
         if(index ==0){
             l1.setVisibility(View.VISIBLE);
             l2.setVisibility(View.INVISIBLE);
             g1.setVisibility(View.INVISIBLE);
             tb1.setVisibility(View.INVISIBLE);
+            b1.setEnabled(false);
         }
         else if(index ==1){
             l1.setVisibility(View.INVISIBLE);
@@ -110,6 +133,7 @@ public class Main3Activity extends AppCompatActivity {
             g1.setVisibility(View.INVISIBLE);
             tb1.setVisibility(View.VISIBLE);
             b2.setEnabled(false);
+            setForthPage();
         }
     }
 }
