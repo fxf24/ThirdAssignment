@@ -69,9 +69,13 @@ public class Main3Activity extends AppCompatActivity {
                     bp1.setVisibility(View.VISIBLE);
                     rt.setVisibility(View.VISIBLE);
                     ch1.setVisibility(View.VISIBLE);
+                    l1.setVisibility(View.VISIBLE);
+                    tb1.setVisibility(View.INVISIBLE);
                     ch1.setBase(SystemClock.elapsedRealtime());
                     ch1.start();
                     b1.setEnabled(false);
+                    b2.setEnabled(true);
+                    index = 0;
                 }
                 else{
                     f1.setVisibility(View.INVISIBLE);
