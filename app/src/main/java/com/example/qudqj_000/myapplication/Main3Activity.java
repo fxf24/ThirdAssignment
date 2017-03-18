@@ -61,6 +61,8 @@ public class Main3Activity extends AppCompatActivity {
         bp1 = (GridLayout)findViewById(R.id.buttonPanel);
         ch1 = (Chronometer)findViewById(R.id.chronometer);
 
+        setTitle("레스토랑 예약");
+
         s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
