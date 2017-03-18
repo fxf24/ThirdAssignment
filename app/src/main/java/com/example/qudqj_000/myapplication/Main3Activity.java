@@ -1,9 +1,11 @@
 package com.example.qudqj_000.myapplication;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -21,11 +23,12 @@ public class Main3Activity extends AppCompatActivity {
     DatePicker dp1;
     TimePicker tp1;
     EditText e1, e2, e3;
-    TextView t1, t2, t3, t4, t5;
+    TextView t1, t2, t3, t4, t5, rt;
     FrameLayout f1;
     LinearLayout l1, l2;
     TableLayout tb1;
     GridLayout g1, bp1;
+    Chronometer ch1;
     int index = 0;
 
     @Override
@@ -49,19 +52,35 @@ public class Main3Activity extends AppCompatActivity {
         t3 = (TextView)findViewById(R.id.adultR);
         t4 = (TextView)findViewById(R.id.teenagerR);
         t5 = (TextView)findViewById(R.id.childrenR);
+        rt = (TextView)findViewById(R.id.reservation_time_text);
         f1 = (FrameLayout)findViewById(R.id.whole_page);
         l1 = (LinearLayout)findViewById(R.id.first_page);
         l2 = (LinearLayout)findViewById(R.id.second_page);
         g1 = (GridLayout)findViewById(R.id.third_page);
         tb1 = (TableLayout)findViewById(R.id.forth_page);
         bp1 = (GridLayout)findViewById(R.id.buttonPanel);
+        ch1 = (Chronometer)findViewById(R.id.chronometer);
 
         s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                f1.setVisibility(View.VISIBLE);
-                bp1.setVisibility(View.VISIBLE);
-                b1.setEnabled(false);
+                if(isChecked==true) {
+                    f1.setVisibility(View.VISIBLE);
+                    bp1.setVisibility(View.VISIBLE);
+                    rt.setVisibility(View.VISIBLE);
+                    ch1.setVisibility(View.VISIBLE);
+                    ch1.setBase(SystemClock.elapsedRealtime());
+                    ch1.start();
+                    b1.setEnabled(false);
+                }
+                else{
+                    f1.setVisibility(View.INVISIBLE);
+                    bp1.setVisibility(View.INVISIBLE);
+                    rt.setVisibility(View.INVISIBLE);
+                    ch1.setVisibility(View.INVISIBLE);
+                    ch1.stop();
+                    ch1.setBase(SystemClock.elapsedRealtime());
+                }
             }
         });
     }
